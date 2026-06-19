@@ -1,0 +1,49 @@
+{
+  "name": "devscripts-cli",
+  "version": "1.0.0",
+  "description": "Developer automation toolkit for common development tasks",
+  "author": "Your Name",
+  "license": "MIT",
+  "keywords": [
+    "cli",
+    "automation",
+    "developer-tools",
+    "nodejs",
+    "typescript",
+    "productivity",
+    "developer-experience"
+  ],
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "devscripts": "./dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "ts-node src/index.ts",
+    "build": "tsup src/index.ts --format cjs,esm --dts --clean",
+    "start": "node dist/index.js",
+    "type-check": "tsc --noEmit",
+    "test": "echo \"No tests yet\"",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "axios": "^1.18.0",
+    "chalk": "^5.6.2",
+    "commander": "^14.0.3",
+    "glob": "^13.0.6",
+    "inquirer": "^14.0.2",
+    "ora": "^9.4.0"
+  },
+  "devDependencies": {
+    "@types/node": "^25.9.3",
+    "ts-node": "^10.9.2",
+    "tsup": "^8.5.1",
+    "typescript": "^5.8.2"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
